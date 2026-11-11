@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Juego Snake clásico con estilo moderno">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">SNAKE</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="score-label">Puntos</span>
+                    <span class="score-value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Récord</span>
+                    <span class="score-value" id="high-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="canvas-wrapper">
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+
+            <!-- Overlay para estados del juego -->
+            <div class="overlay" id="overlay">
+                <div class="overlay-content" id="overlay-content">
+                    <h2 class="overlay-title" id="overlay-title">¿Listo para jugar?</h2>
+                    <p class="overlay-text" id="overlay-text">
+                        Usa las flechas o WASD para moverte.<br>
+                        En móvil, desliza sobre el tablero.
+                    </p>
+                    <button class="game-button" id="start-button">Jugar</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="game-footer">
+            <p class="control-hint">
+                <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> o
+                <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ·
+                <kbd>Espacio</kbd> para pausar
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

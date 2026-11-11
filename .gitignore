@@ -1,0 +1,15 @@
+# Dependencias
+node_modules/
+
+# AWS Blocks
+.blocks-sandbox
+cdk.out/
+aws-blocks/client.js
+aws-blocks/blocks.spec.json
+.bb-data/
+
+# Generales
+*.log
+*.tsbuildinfo
+dist/
+.DS_Store

@@ -1,0 +1,20 @@
+# ──────────────────────────────────────────────
+# Orquestación local del juego Snake
+# Uso:
+#   docker compose up --build   → iniciar
+#   docker compose down         → detener
+# ──────────────────────────────────────────────
+services:
+  snake-game:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: snake-game
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3

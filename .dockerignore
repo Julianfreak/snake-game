@@ -1,0 +1,28 @@
+# Directorios generados (no copiar al contenedor)
+node_modules
+cdk.out
+dist
+.blocks-sandbox
+.bb-data
+
+# Git
+.git
+.gitignore
+
+# Documentación y config de despliegue (no necesaria en el contenedor del juego)
+DEPLOY.md
+README.md
+CLAUDE.md
+Dockerfile.deploy
+docker-compose.deploy.yml
+aws-blocks
+cdk.json
+.blocks
+.hosting
+package.json
+package-lock.json
+
+# Archivos temporales
+*.log
+*.tsbuildinfo
+.DS_Store

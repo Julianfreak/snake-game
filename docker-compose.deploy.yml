@@ -1,0 +1,34 @@
+# ──────────────────────────────────────────────
+# Orquestación del contenedor de despliegue a AWS
+#
+# Uso:
+#   # Desplegar:
+#   docker compose -f docker-compose.deploy.yml run --rm deploy \
+#       cdk deploy --all --require-approval never
+#
+#   # Bootstrap (primera vez):
+#   docker compose -f docker-compose.deploy.yml run --rm deploy \
+#       cdk bootstrap aws://012646747071/us-east-2
+#
+#   # Destruir (limpiar recursos):
+#   docker compose -f docker-compose.deploy.yml run --rm deploy \
+#       cdk destroy --all
+#
+#   # Shell interactivo:
+#   docker compose -f docker-compose.deploy.yml run --rm deploy
+# ──────────────────────────────────────────────
+services:
+  deploy:
+    build:
+      context: .
+      dockerfile: Dockerfile.deploy
+    container_name: snake-deploy
+    volumes:
+      # Montar credenciales de AWS del host (solo lectura)
+      - ${HOME}/.aws:/root/.aws:ro
+    environment:
+      - AWS_PROFILE=aws-migrate
+      - AWS_REGION=us-east-2
+    stdin_open: true
+    tty: true
+    working_dir: /app

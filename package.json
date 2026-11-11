@@ -1,0 +1,28 @@
+{
+  "name": "snake-game",
+  "private": true,
+  "version": "0.0.0",
+  "devDependencies": {
+    "typescript": "^5",
+    "aws-cdk-lib": "^2.273.0",
+    "constructs": "^10.8.1",
+    "tsx": "^4.23.15",
+    "esbuild": "^0.28.2",
+    "@types/node": "^20.19.43"
+  },
+  "workspaces": [
+    "aws-blocks"
+  ],
+  "dependencies": {
+    "@aws-blocks/blocks": "*"
+  },
+  "scripts": {
+    "sandbox": "tsx aws-blocks/scripts/sandbox.ts",
+    "sandbox:destroy": "tsx -C cdk aws-blocks/scripts/sandbox-destroy.ts",
+    "sandbox:console": "tsx aws-blocks/scripts/console.ts",
+    "deploy": "tsx aws-blocks/scripts/deploy.ts",
+    "destroy": "tsx aws-blocks/scripts/destroy.ts",
+    "dev:server": "tsx watch aws-blocks/scripts/server.ts",
+    "dev:stop": "tsx aws-blocks/scripts/stop.ts"
+  }
+}
