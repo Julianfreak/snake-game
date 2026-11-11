@@ -106,7 +106,9 @@ No necesitas instalar Node.js, Python ni ninguna otra dependencia en tu sistema 
 docker compose up --build
 ```
 
-Abre **[http://localhost:8080](http://localhost:8080)** en tu navegador.
+Abre **[http://localhost:8081](http://localhost:8081)** en tu navegador.
+
+> **Nota:** Si el puerto 8081 está ocupado, edita `docker-compose.yml` y cambia el mapeo `"8081:80"` por otro puerto libre (por ejemplo `"3000:80"`).
 
 ### Detener el contenedor
 
